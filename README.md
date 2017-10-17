@@ -42,3 +42,7 @@ After refreshing the WebUI, you should see the "Open" button appear for the door
 **Alternativly**, if you dont want to use docker, from the cloned repo run:
 
 `./door -k -s <SERVER_IP> -t <TOKEN>`
+
+ To run in dev/dummy mode (i.e. you're not running this on a raspberry pi) just pass the `-x` option. The dummy server will log responses to calls to open/close the door:
+
+`./door -x -k -s <SERVER_IP> -t <TOKEN>`
