@@ -1,7 +1,7 @@
 version: '2'
 services:
   server:
-    image: thann/doorbot:arm
+    image: doorbot-challenge
     build: .
     restart: unless-stopped
     ports:
@@ -14,10 +14,10 @@ services:
     #command: server --watch
 
   door:
-    image: thann/doorbot:arm
+    image: doorbot-challenge
     #restart: unless-stopped
     privileged: true
-    command: door -k -s server -t "abc123"
+    command: door --insecure --dummy -s server -t "abc123"
 
 
 volumes:
