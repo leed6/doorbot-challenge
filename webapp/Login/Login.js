@@ -3,19 +3,21 @@ import Button from "material-ui/Button";
 import { FormControl } from "material-ui/Form";
 import Input, { InputLabel } from "material-ui/Input";
 import axios from "axios";
-import { asyncHelper } from "../utils";
 
 export default class Login extends React.Component {
   state = {
-    username: "",
-    password: ""
+    username: "admin",
+    password: "admin"
   }
 
   onLogin = async () => {
+    const { username, password } = this.state;
     try {
-      const response = await asyncHelper(axios.post('/auth', { username: "admin", password: "admin" }));
-      this.props.history.push("/somewhere")
-      console.log(response);
+      const response = await axios.post('/auth', { username , password  });
+      if (response) {
+        console.log(response);
+        this.props.authenticateUser();
+      }
     } catch(error) {
       console.log(error);
     }
@@ -23,6 +25,8 @@ export default class Login extends React.Component {
 
   render() {
     return (<div>
+      <p>Username: admin</p>
+      <p>Password: admin</p>
       <FormControl>
           <InputLabel>Name</InputLabel>
           <Input value={this.state.username} onChange={(e) => this.setState({ username: e.target.value })} />
