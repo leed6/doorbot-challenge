@@ -1,0 +1,4 @@
+{
+  "extends": ["prettier", "prettier/react","airbnb", "react-app", "pluginsn:jsx-a11y/recommended"],
+  "plugins": ["jsx-a11y"]
+}

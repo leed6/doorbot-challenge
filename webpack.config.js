@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = {
 	context: __dirname,
-	entry: "app/main.js",
+	entry: ["babel-polyfill", "app/main.js"],
 	output: {
 		path: __dirname + "/dist",
 		libraryTarget: 'var',
@@ -26,7 +26,7 @@ module.exports = {
 				test:  /\.js$/,
 				loader: "babel",
 				exclude: /node_modules/,
-				query: { presets: ['es2015'] }
+				query: { presets: ['es2015', 'stage-0', 'react'] }
 			},
 		],
 		preLoaders: [
