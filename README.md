@@ -5,7 +5,7 @@ Uses a raspberrypi and a solid-state relay to unlock the door
 
 A node server running optionally elseware manages the users and serves the WebUI
 
-# API
+# API 
 ## Authentication
 | HTTP method   | Endpoint      | Function  |
 | ------------- |:-------------:| -----:|
